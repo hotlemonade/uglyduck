@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        body{
+            height: 8000px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="charactor-cow">
+            <img src="./img/ugly-duck.svg" alt="" class="cow">
+            <div class="circle"></div>
+        </div>
+
+        <div class="wave"></div>
+        
+    </div>
+
+    
+
+    <script>
+        const wrap = document.querySelector('.wrap');
+        const cow = document.querySelector('.charactor-cow');
+        const circle = cow.querySelector('.circle')
+        let cowBox = cow.getBoundingClientRect();
+        console.log( cowBox.top, cowBox.bottom)
+        // console.log(cow)
+        
+
+        window.addEventListener('scroll', (e) => {
+            let pos = window.scrollY;
+            let deg = pos * 0.1; 
+            let cowBottom = cowBox.top + (pos*0.3)
+            // console.log(`deg : ${deg}`)
+
+            if( deg <= 180) {
+                cow.style.transform = `rotate(-${deg}deg)`;
+                circle.classList.remove('on')
+                cow.style.bottom = '-80vh';
+            } else if(deg > 100) { 
+                cow.style.transform = `rotate(-180deg)`; 
+
+                if(deg > 400){
+                  circle.classList.add('on')
+                  cow.style.bottom = `${cowBottom}px`; 
+                  console.log(`cowBottom : ${cowBottom}`)
+                }
+            } 
+
+            if( pos > 6000) {
+                window.location.href= './sub.html';
+            }
+
+            // if(cowBottom > 2800) {
+            //     wrap.style.position = 'relative';
+            
+            // } else {
+            //     wrap.style.position = 'fixed';
+            // }
+        });
+    </script>
+</body>
+</html>
