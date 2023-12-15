@@ -306,7 +306,7 @@
 
     .info-text{
         position: absolute;
-        margin-top:2000px;
+        margin-top:1600px;
         font-size: 100px;
     }
 }
@@ -328,7 +328,7 @@
 }
 
 .s5{
-    height:150vh;
+    height:170vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,9 +348,10 @@
         .ugduck{
             
             position: absolute;
-            bottom: -200px;
+            bottom: -100px;
             transition: 0.5s;
-            height: 1000px;
+            height: 800px;
+            
         }
     }
     
@@ -360,6 +361,7 @@
     }
 
     h2{
+        margin-bottom: 200px;
         font-size: 300px;
         font-weight: 600;
     }
