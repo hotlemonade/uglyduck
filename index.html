@@ -5,66 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/common.css">
-    <style>
-        body{
-            height: 8000px;
-        }
-    </style>
-
+  
 </head>
-<body>
-    <div class="wrap">
-        <div class="charactor-cow">
-            <img src="./img/ugly-duck.svg" alt="" class="cow">
-            <div class="circle"></div>
-        </div>
 
-        <div class="wave"></div>
-        
+<body>
+    <div class="index-wrap">
+        <div class="wrap">
+
+            <img src="./img/cloud1.svg" alt="" class="cloud1">
+            <img src="./img/cloud2.svg" alt="" class="cloud2">
+            <img src="./img/cloud3.svg" alt="" class="cloud3">
+    
+            
+    
+            <div class="wave"></div>
+    
+            <img src="./img/wave_line1.svg" alt="" class="wave1">
+            <img src="./img/wave_line2.svg" alt="" class="wave2">
+            <img src="./img/wave_line3.svg" alt="" class="wave3">
+            <img src="./img/wave_line4.svg" alt="" class="wave4">
+    
+            
+    
+            <div class="charactor-cow">
+                <img src="./img/ugduck.svg" alt="" class="cow">
+                <div class="circle"></div>
+            </div>
+    
+            <img src="./img/wave_front.svg" alt="" class="wave-front">
+    
+            
+    
+            <!-- <img src="./img/wave_front.svg" alt="" class="wave-front"> -->
+    
+           
+            
+        </div>
     </div>
+    
 
     
 
+     
+    <script src="./js/index.js"></script>
+    
+    
+    
     <script>
-        const wrap = document.querySelector('.wrap');
-        const cow = document.querySelector('.charactor-cow');
-        const circle = cow.querySelector('.circle')
-        let cowBox = cow.getBoundingClientRect();
-        console.log( cowBox.top, cowBox.bottom)
-        // console.log(cow)
+        // // .wrap을 가지고오며 script에 wrap 변수에 넣어준다.
+        // const wrap = document.querySelector('.wrap');
+        // // .cow을 가지고온다
+        // const cow = document.querySelector('.charactor-cow');
+        // const circle = cow.querySelector('.circle')
+        // let cowBox = cow.getBoundingClientRect();
+        // console.log( cowBox.top, cowBox.bottom)
+        // // console.log(cow)
         
 
-        window.addEventListener('scroll', (e) => {
-            let pos = window.scrollY;
-            let deg = pos * 0.1; 
-            let cowBottom = cowBox.top + (pos*0.3)
-            // console.log(`deg : ${deg}`)
+        // window.addEventListener('scroll', (e) => {
+        //     let pos = window.scrollY;
+        //     let deg = pos * 0.1; 
+        //     let cowBottom = cowBox.top + (pos*0.3)
+        //     // console.log(`deg : ${deg}`)
 
-            if( deg <= 180) {
-                cow.style.transform = `rotate(-${deg}deg)`;
-                circle.classList.remove('on')
-                cow.style.bottom = '-80vh';
-            } else if(deg > 100) { 
-                cow.style.transform = `rotate(-180deg)`; 
+        //     if( deg <= 180) {
+        //         cow.style.transform = `rotate(-${deg}deg)`;
+        //         circle.classList.remove('on')
+        //         cow.style.bottom = '-30vh';
+        //     } else if(deg > 100) { 
+        //         cow.style.transform = `rotate(-180deg)`; 
 
-                if(deg > 400){
-                  circle.classList.add('on')
-                  cow.style.bottom = `${cowBottom}px`; 
-                  console.log(`cowBottom : ${cowBottom}`)
-                }
-            } 
+        //         if(deg > 400){
+        //           circle.classList.add('on')
+        //           cow.style.bottom = `${cowBottom}px`; 
+        //           console.log(`cowBottom : ${cowBottom}`)
+        //         }
+        //     } 
 
-            if( pos > 6000) {
-                window.location.href= './sub.html';
-            }
+        //     if( pos > 6000) {
+        //         window.location.href= './sub.html';
+        //     }
 
-            // if(cowBottom > 2800) {
-            //     wrap.style.position = 'relative';
+        //     if(cowBottom > 2800) {
+        //         wrap.style.position = 'relative';
             
-            // } else {
-            //     wrap.style.position = 'fixed';
-            // }
-        });
+        //     } else {
+        //         wrap.style.position = 'fixed';
+        //     }
+        // });
     </script>
 </body>
 </html>
